@@ -68,7 +68,7 @@ public class Controller implements Initializable {
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(mailLinkBinder.getUrl()), null);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успешно");
-            alert.setHeaderText(null);
+            //alert.setHeaderText(null);
             alert.setContentText("Ссылка скопирована в буфер обмена");
             alert.showAndWait();
         }

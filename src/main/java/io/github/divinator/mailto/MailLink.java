@@ -61,8 +61,13 @@ public class MailLink {
         String AMPERSAND = "&";
         String MAILTO = "mailto:?";
 
+        if (params.containsKey("to")) {
+            MAILTO = String.format("%s%s?", MAILTO.replaceAll("\\?", ""), params.get("to"));
+        }
+
         final String collect = params.entrySet().stream()
                 .filter(stringStringEntry -> !stringStringEntry.getValue().isEmpty())
+                .filter(stringStringEntry -> !stringStringEntry.getKey().equals("to"))
                 .map(stringStringEntry -> {
                     try {
                         return String.format("%s=%s",

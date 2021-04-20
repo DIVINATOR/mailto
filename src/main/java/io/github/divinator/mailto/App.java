@@ -21,6 +21,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -38,7 +39,8 @@ public class App extends Application {
         scene.getStylesheets().add("css/app.css");
         primaryStage.setTitle(String.format("%s v.%s", APP_NAME, APP_VERSION));
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UTILITY);
+        primaryStage.initStyle(StageStyle.DECORATED);
+        primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("img/ico.png")));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
